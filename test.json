@@ -1,12 +1,11 @@
 {
   "builders": [
     {
-      "CPUs": "1",
-      "RAM": "512",
+      "CPUs": 1,
+      "RAM": 512,
       "boot_command": [
         "<tab> text ks=http://172.30.0.1:8343/ks.cfg <wait5><enter>"
       ],
-      "boot_order": "disk,cdrom,floppy",
       "boot_wait": "10s",
       "cluster": "{{user `cluster`}}",
       "convert_to_template": true,
@@ -14,8 +13,9 @@
       "datastore": "{{user `datastore`}}",
       "guest_os_type": "centos-64",
       "insecure_connection": "true",
-      "iso_paths": [
-        "[datastore1] iso/CentOS-7-x86_64-Minimal-1810.iso"
+      "iso_checksum": "88c0437f0a14c6e2c94426df9d43cd67",
+      "iso_urls": [
+	"http://tubby.soeting.net/CentOS-7-x86_64-minimal.iso"
       ],
       "network_adapters": [
         {
@@ -29,7 +29,7 @@
       "ssh_username": "{{user `ssh_username`}}",
       "storage": [
         {
-          "disk_size": "40960",
+          "disk_size": 40960,
           "disk_thin_provisioned": true
         }
       ],
